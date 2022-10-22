@@ -6,7 +6,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>tic-tac-toe</title>
 		<link rel="stylesheet" href="style.css" />
-		<script src="app.js"></script>
+		<script src="app.js" defer></script>
 	</head>
-	<body></body>
+	<body>
+		<div class="wrapper">
+			<div class="scoreBoard">
+				<div class="player" id="playerOne">
+					<label class="playerName">player One</label>
+					<label class="playerScore">0</label>
+				</div>
+				<div class="player" id="playerTwo">
+					<label class="playerName">player Two</label>
+					<label class="playerScore">0</label>
+				</div>
+			</div>
+			<div class="gameBoard" id="gameBoard">#</div>
+		</div>
+	</body>
 </html>
