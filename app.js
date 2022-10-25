@@ -2,23 +2,32 @@
     console.log("beep boop")
     const fields = []
     const gameBoard = document.querySelector("#gameBoard")
-    let newField = document.createElement("div")
+    let numField = 0
+
+
+
+    //function creates an array with 9 entries, all filled with "x"
     function board() {
         for (let i = 0; i < 9; i++) {
             fields[i] = "x";
             console.log("hello");
         } 
+        
+    //all array entries turn into a div with their textcontent being the value of the array
+    //every div gets a class of "fieldN" where N=iteration
+    //eventlistener works; will be used to turn div content into X or O through other function
         for (let field of fields) {
+            numField++
             let newField = document.createElement("div");
             newField.textContent = field;
+            newField.classList.add(`field${numField}`)
+            newField.addEventListener('click', function test() {console.log('helloooo')})
             gameBoard.append(newField);
         }
         console.log(fields)
-        return fields
     }
     board()
 })()
-
 
 //board with 9 fields
 //each object can contain " ", "X" or "O"
