@@ -1,7 +1,7 @@
 (function() {
     console.log("beep boop")
     const fields = []
-    const gameBoard = document.querySelector("#gameBoard")
+    const gameBoard = document.querySelector("#game-board")
     let numField = 0
     let numTurns = 0
 
@@ -27,7 +27,42 @@
     board()
 
     function init() {
+        //modal popup
+        (function() {
+            console.log('INIT')
+            // Get the modal, declare buttons and inputs
+			const modal = document.getElementById("myModal");
+            const playerOne = document.getElementById("div-name-p1")
+            const playerTwo = document.getElementById("div-name-p2")
+            const letsGo = document.getElementById("div-lets-go");
+            const btnNameP1 = document.getElementById("btn-name-p1");
+            const btnNameP2 = document.getElementById("btn-name-p2");
+            const btnLetsGo = document.getElementById("btn-lets-go");
+            const inputNameP1 = document.getElementById("input-name-p1");
+            const inputNameP2 = document.getElementById("input-name-p2");
+
+			// Modal opens on page load
+			(function() {
+				modal.style.display = "block";
+			})();
+
+            // When first "Enter" button is clicked, go to next input
+            btnNameP1.onclick = function () {
+                playerOne.style.display = "none";
+                playerTwo.style.display = "block";
+            };
+
+            btnNameP2.onclick = function () {
+                playerTwo.style.display = "none";
+                letsGo.style.display = "block";
+            };
+            
+            btnLetsGo.onclick = function () {
+                modal.style.display = "none";
+            };
+        })()
         //ask for name 
+
 
             //if amount of players === 0 put name in label .playerOne
             //factPlayers(name)
@@ -40,6 +75,7 @@
             //board()
             //begin()
     }
+    init()
 
     function factPlayers(name) {
         //create Player object with
