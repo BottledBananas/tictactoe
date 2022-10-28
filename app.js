@@ -40,6 +40,8 @@
             const btnLetsGo = document.getElementById("btn-lets-go");
             const inputNameP1 = document.getElementById("input-name-p1");
             const inputNameP2 = document.getElementById("input-name-p2");
+            const labelP1 = document.getElementById("label-p1");
+            const labelP2 = document.getElementById("label-p2");
 
 			// Modal opens on page load
 			(function() {
@@ -50,11 +52,15 @@
             btnNameP1.onclick = function () {
                 playerOne.style.display = "none";
                 playerTwo.style.display = "block";
+                // DOESNT WORK VVV
+                labelP1.textContent = inputNameP1.innerText;
             };
 
             btnNameP2.onclick = function () {
                 playerTwo.style.display = "none";
                 letsGo.style.display = "block";
+                // DOESNT WORK EITHER VVV MAKE FORM BUTTON WITH event.preventDefault()
+                labelP2.textContent = inputNameP2.textContent;
             };
             
             btnLetsGo.onclick = function () {
