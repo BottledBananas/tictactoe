@@ -9,18 +9,44 @@
 		<script src="app.js" defer></script>
 	</head>
 	<body>
-		<div class="wrapper">
-			<div class="scoreBoard">
-				<div class="player" id="playerOne">
-					<label class="playerName">player One</label>
-					<label class="playerScore">0</label>
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div id="div-name-p1">
+					<h2>Welcome to Tic-Tac-Toe!</h2>
+					<h3>Please enter your name, Player one.</h3>
+					<input type="text" id="input-name-p1" />
+					<button id="btn-name-p1">Enter</button>
 				</div>
-				<div class="player" id="playerTwo">
-					<label class="playerName">player Two</label>
-					<label class="playerScore">0</label>
+				<div id="div-name-p2">
+					<h2>Welcome, <span id="p1-name">[player one's name]</span>.</h2>
+					<h3>What is your name, Player two?</h3>
+					<input type="text" id="input-name-p2" />
+					<button id="btn-name-p2">Enter</button>
+				</div>
+				<div id="div-lets-go">
+					<h2>
+						Wonderful to see you,
+						<span id="p2-name">[player two's name]</span>!
+					</h2>
+					<h3>Let's get this party started!</h3>
+					<button id="btn-lets-go">Let's go!</button>
 				</div>
 			</div>
-			<div class="gameBoard" id="gameBoard">#</div>
+		</div>
+		<div class="wrapper">
+			<div class="score-board">
+				<div class="player" id="score-p1">
+					<label class="player-name" id="label-p1">player One</label>
+					<label class="player-score">0</label>
+				</div>
+				<div class="player" id="score-p2">
+					<label class="player-name" id="label-p2">player Two</label>
+					<label class="player-score">0</label>
+				</div>
+			</div>
+			<div class="game-board" id="game-board">#</div>
 		</div>
 	</body>
 </html>
