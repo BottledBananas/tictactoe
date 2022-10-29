@@ -27,6 +27,13 @@
     board()
 
     function init() {
+        function createPlayer(name, score) {
+            return { 
+                name,
+                score,
+            }
+        }
+ 
         //modal popup
         (function() {
             console.log('INIT')
@@ -48,6 +55,7 @@
             btnNameP1.onclick = function () {
                 const inputNameP1 = document.getElementById("input-name-p1").value;
                 const labelP1 = document.getElementById("label-p1");
+                const P1 = createPlayer(inputNameP1, 0)
                 playerOne.style.display = "none";
                 playerTwo.style.display = "block";
                 labelP1.innerText = inputNameP1;
@@ -56,6 +64,7 @@
             btnNameP2.onclick = function () {
                 const inputNameP2 = document.getElementById("input-name-p2").value;
                 const labelP2 = document.getElementById("label-p2");
+                const P2 = createPlayer(inputNameP2, 0)
                 playerTwo.style.display = "none";
                 letsGo.style.display = "block";
                 labelP2.textContent = inputNameP2;
@@ -63,6 +72,8 @@
             
             btnLetsGo.onclick = function () {
                 modal.style.display = "none";
+                board()
+                begin()
             };
         })()
         //ask for name 
@@ -142,6 +153,7 @@
 function Player(name) {
     return { name: name }
 }
+
 
 const playerList = () => {
     list = []
