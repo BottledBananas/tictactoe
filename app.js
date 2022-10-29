@@ -24,7 +24,7 @@
             gameBoard.append(newField);
         }
     }
-    board()
+
 
     function init() {
         function createPlayer(name, score) {
@@ -55,19 +55,23 @@
             btnNameP1.onclick = function () {
                 const inputNameP1 = document.getElementById("input-name-p1").value;
                 const labelP1 = document.getElementById("label-p1");
+                const p1Name = document.getElementById("p1-name");
                 const P1 = createPlayer(inputNameP1, 0)
                 playerOne.style.display = "none";
                 playerTwo.style.display = "block";
-                labelP1.innerText = inputNameP1;
+                labelP1.textContent = inputNameP1;
+                p1Name.textContent = inputNameP1;
             };
 
             btnNameP2.onclick = function () {
                 const inputNameP2 = document.getElementById("input-name-p2").value;
                 const labelP2 = document.getElementById("label-p2");
+                const p2Name = document.getElementById("p2-name");
                 const P2 = createPlayer(inputNameP2, 0)
                 playerTwo.style.display = "none";
                 letsGo.style.display = "block";
                 labelP2.textContent = inputNameP2;
+                p2Name.textContent = inputNameP2;
             };
             
             btnLetsGo.onclick = function () {
