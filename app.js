@@ -38,10 +38,6 @@
             const btnNameP1 = document.getElementById("btn-name-p1");
             const btnNameP2 = document.getElementById("btn-name-p2");
             const btnLetsGo = document.getElementById("btn-lets-go");
-            const inputNameP1 = document.getElementById("input-name-p1");
-            const inputNameP2 = document.getElementById("input-name-p2");
-            const labelP1 = document.getElementById("label-p1");
-            const labelP2 = document.getElementById("label-p2");
 
 			// Modal opens on page load
 			(function() {
@@ -50,17 +46,19 @@
 
             // When first "Enter" button is clicked, go to next input
             btnNameP1.onclick = function () {
+                const inputNameP1 = document.getElementById("input-name-p1").value;
+                const labelP1 = document.getElementById("label-p1");
                 playerOne.style.display = "none";
                 playerTwo.style.display = "block";
-                // DOESNT WORK VVV
-                labelP1.textContent = inputNameP1.innerText;
+                labelP1.innerText = inputNameP1;
             };
 
             btnNameP2.onclick = function () {
+                const inputNameP2 = document.getElementById("input-name-p2").value;
+                const labelP2 = document.getElementById("label-p2");
                 playerTwo.style.display = "none";
                 letsGo.style.display = "block";
-                // DOESNT WORK EITHER VVV MAKE FORM BUTTON WITH event.preventDefault()
-                labelP2.textContent = inputNameP2.textContent;
+                labelP2.textContent = inputNameP2;
             };
             
             btnLetsGo.onclick = function () {
