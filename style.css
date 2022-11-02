@@ -27,6 +27,10 @@ body {
     display: block;
 }
 
+.modal #modal-error-name-p1 {
+    display: none;
+}
+
 .modal #div-name-p2 {
     display: none;
 }
