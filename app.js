@@ -45,29 +45,81 @@
             const btnNameP1 = document.getElementById("btn-name-p1");
             const btnNameP2 = document.getElementById("btn-name-p2");
             const btnLetsGo = document.getElementById("btn-lets-go");
+            const nameErrorP1 = document.getElementById("modal-error-name-p1");
+            const nameErrorP2 = document.getElementById("modal-error-name-p2");
+            const inputErrorP1 = document.getElementById("name-input-error-p1");
+            const inputErrorP2 = document.getElementById("name-input-error-p2");
+            const btnErrorP1 = document.getElementById("button-error-name-p1");
 
 			// Modal opens on page load
 			(function() {
 				modal.style.display = "block";
 			})();
 
-            // When first "Enter" button is clicked, go to next input
-            btnNameP1.onclick = function () {
+            function namePlayer() {
                 const inputNameP1 = document.getElementById("input-name-p1").value;
                 const labelP1 = document.getElementById("label-p1");
                 const p1Name = document.getElementById("p1-name");
-                const P1 = createPlayer(inputNameP1, 0)
-                playerOne.style.display = "none";
-                playerTwo.style.display = "block";
-                labelP1.textContent = inputNameP1;
-                p1Name.textContent = inputNameP1;
+                const P1 = createPlayer(inputNameP1, 0);
+                if (inputNameP1 === "") {
+                    const btnErrorP1 = document.getElementById("btn-error-name-p1");
+                    nameErrorP1.style.display = "block";
+                    playerOne.style.display = "none";
+                    btnErrorP1.onclick = function () {
+                        const inputErrorP1 = document.getElementById("input-error-name-p1").value;
+                        if (inputErrorP1 === "") {
+                            console.log("oopsee")
+                        }
+                        else {
+                            nameErrorP1.style.display = "none";
+                            playerTwo.style.display = "block";
+                            labelP1.textContent = inputErrorP1;
+                            p1Name.textContent = inputErrorP1;
+                        }
+                    }
+                }
+                else {
+                    playerOne.style.display = "none";
+                    playerTwo.style.display = "block";
+                    labelP1.textContent = inputNameP1;
+                    p1Name.textContent = inputNameP1;
+                }
+            }
+
+            // When first "Enter" button is clicked, go to next input
+            btnNameP1.onclick = function () {
+                namePlayer()
+                // H2 welcomes players
+                // H3 asks for player 1 name
+                // When button is pressed, check input box
+
+                // When input box is empty, 
+                    // H2 tells player something went wrong
+                    // H3 asks for name again
+
+                    // When input box is empty, don't do anything
+
+                // When input box is filled,
+                    // Create player Object for player 1
+                    // H2 welcomes Player 1
+                    // H3 asks for player 2's name
+
+                    // When input box is empty, 
+                        // H2 tells player something went wrong
+                        // H3 asks for name again
+
+                        // When input box is empty, don't do anything
+
+                    // When player box is filled,
+                        // H2 Welcomes player 2
+                        // H3 says 'start game'
             };
 
             btnNameP2.onclick = function () {
                 const inputNameP2 = document.getElementById("input-name-p2").value;
                 const labelP2 = document.getElementById("label-p2");
                 const p2Name = document.getElementById("p2-name");
-                const P2 = createPlayer(inputNameP2, 0)
+                const P2 = createPlayer(inputNameP2, 0);
                 playerTwo.style.display = "none";
                 letsGo.style.display = "block";
                 labelP2.textContent = inputNameP2;
